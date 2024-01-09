@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Header from 'components/Header.JSX'
+import Header from 'components/Header'
 import List from 'components/List'
 import Footer from 'components/Footer'
-import Search from '../../components/Search'
+import Search from 'components/Search'
 
 const MainPage = () => {
   const [countries, setCountries] = useState([])
@@ -55,8 +55,6 @@ const MainPage = () => {
         />
       </div>
       <Footer />
-      {/* <div className='flex flex-col h-full'>
-      </div> */}
     </>
   )
 
