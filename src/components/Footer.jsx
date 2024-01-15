@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <div className='border-t w-full py-4 flex items-center justify-center'>
-      <Link to="/" className='font-[Oswald] text-sm  opacity-30 py-4 w-32 text-center'>
-        <span className='text-blue-900'>Restcountries</span>
-        <span>.com</span>
+    <div className='border-t w-full flex items-center justify-center dark:border-t-[#28292c]'>
+      <Link to="/" className='font-[Oswald] text-sm  py-4 w-32 text-center'>
+        <span className='text-blue-900/80 dark:text-white/80'>Restcountries</span>
+        <span className='dark:text-blue-900/80'>.com</span>
       </Link>
     </div>
   )

@@ -76,7 +76,6 @@ const MainPage = () => {
       alert('검색어를 입력하세요')
       setLoading(false)
     }
-
   }
 
   //input 변경감지
@@ -157,7 +156,7 @@ const MainPage = () => {
         <Search fetchSearchCountries={fetchSearchCountries} changeValue={changeValue} search={search}>
           <SelectMenu selectContinent={selectContinent} continent={continent} changeSelect={changeSelect} />
         </Search>
-        <div className='p-2 mb-6 px-4 border-b'>css필터</div>
+        <div className='p-2 mb-6 px-4 border-b border-[#f3f4f6] dark:border-[#2e3031]'>css필터</div>
         <List countries={countries} newCountries={newCountries} displayedCountries={displayedCountries} errorMsg={errorMsg} filterCountries={filterCountries} />
       </div>
     </>

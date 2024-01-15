@@ -15,13 +15,13 @@ const Search = ({ fetchSearchCountries, changeValue, search, children }) => {
           type="text"
           onChange={(e) => changeValue(e.target.value)}
           value={search}
-          className="w-full focus:ring-2 focus:ring-blue-900 focus:outline-none appearance-none text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-lg py-2 pl-9 ring-1  ring-slate-200 shadow-sm max-[300px]:pl-4"
+          className="w-full appearance-none text-sm leading-6 rounded-lg py-2 pl-5 max-[300px]:pl-4"
           aria-label="Filter projects" placeholder="Search Country" />
       </div>
       <button
         type='button'
         onClick={(e) => fetchSearchCountries(e)}
-        className='px-4 py-2 font-bold text-blue-900 rounded-lg border hover:bg-blue-900 hover:text-slate-50 transition ease-in'
+        className='px-4 py-2 rounded-lg transition ease-in hover:ring-blue-950 dark:hover:bg-[#28292c]/30 dark:hover:text-white dark:hover:ring-[#28292c]'
       >
         검색
       </button>

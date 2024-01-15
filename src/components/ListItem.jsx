@@ -14,9 +14,9 @@ const ListItem = ({ countries }) => {
   return (
     <article
       onClick={() => handleClick()}
-      className="flex items-center min-[501px]:space-x-6 p-6 cursor-pointer hover:bg-slate-50 transition-all max-[500px]:flex-wrap max-[500px]:p-4  max-[500px]:pt-8  max-[500px]:first:pt-4"
+      className="flex items-center min-[501px]:space-x-6 p-6 cursor-pointer transition-all max-[500px]:flex-wrap max-[500px]:p-4 max-[500px]:pt-8 max-[500px]:first:pt-4 hover:bg-[#f3f4f6] dark:hover:bg-[#28292c]"
     >
-      <div className="relative max-w-40 w-full h-auto border max-[500px]:max-w-full"
+      <div className="relative max-w-40 w-full h-auto border max-[500px]:max-w-full dark:border-0"
       >
         {loading && (
           <Loading className={`w-10`} />
@@ -32,7 +32,7 @@ const ListItem = ({ countries }) => {
       <div className="min-w-0 flex flex-col gap-2 flex-auto max-[500px]:p-4">
         <div className="flex items-center gap-x-2 flex-wrap ">
           <h2 className="font-bold truncate "> {countries.name} </h2>
-          <span className=" text-sm font-medium opacity-70 truncate">({countries.koName})</span>
+          <span className=" text-sm font-medium truncate">({countries.koName})</span>
         </div>
         <dl className="flex flex-wrap text-sm leading-6 gap-x-4">
           <div className='flex gap-1'>
