@@ -10,7 +10,7 @@ const Search = ({ fetchSearchCountries, changeValue, search, children }) => {
         {children}
       </>
       <div className='flex-auto'>
-        <label htmlFor="검색" className="sr-only"></label>
+        <label className="sr-only">검색</label>
         <input
           type="text"
           onChange={(e) => changeValue(e.target.value)}
@@ -21,7 +21,7 @@ const Search = ({ fetchSearchCountries, changeValue, search, children }) => {
       <button
         type='button'
         onClick={(e) => fetchSearchCountries(e)}
-        className='px-4 py-2 rounded-lg transition ease-in hover:ring-blue-950 dark:hover:bg-[#28292c]/30 dark:hover:text-white dark:hover:ring-[#28292c]'
+        className='px-4 py-2 rounded-lg  dark:hover:text-gray-100 '
       >
         검색
       </button>

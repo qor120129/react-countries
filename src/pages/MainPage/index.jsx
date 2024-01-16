@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useState, useEffect } from 'react'
 
 import List from 'components/List'
 import Search from 'components/Search'
 import Loading from 'components/Loading'
-import SelectMenu from '../../components/SelectMenu'
+import SelectMenu from 'components/SelectMenu'
+import ScrollToTop from 'components/ScrollToTop '
+import { throttle } from 'lodash'
+import ActivePageView from '../../components/ActivePageView'
+import ListItem from '../../components/ListItem'
 
 const MainPage = () => {
   const [countries, setCountries] = useState([])
@@ -16,6 +20,8 @@ const MainPage = () => {
   const [continent, setContinent] = useState([])
   const [search, setSearch] = useState('')
   const [selectContinent, setSelectContinent] = useState('All Continent')
+  const [showButton, setShowButton] = useState(false)
+  const [activePageView, setActivePageView] = useState(true)
 
   const url = `https://restcountries.com/v3.1`
   const urlFilter = `?fields=name,capital,area,continents,languages,flags,population,translations,currencies`
@@ -24,6 +30,33 @@ const MainPage = () => {
     setLoading(true)
     fetchCountries()
   }, [])
+
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
+  //scroll 버튼 보여주기
+  const handleScroll = useMemo(() =>
+    throttle(() => {
+      if (window.scrollY > 1000) {
+        setShowButton(true)
+      } else {
+        setShowButton(false)
+      }
+    }, 300), []
+  );
+
+  //scroll 이벤트
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
 
   const fetchCountries = async () => {
     try {
@@ -149,6 +182,16 @@ const MainPage = () => {
     setContinent(filterContinent)
   }
 
+  const pageView = (active) => {
+    if (active === true) {
+      setActivePageView(true)
+    } else if (active === false) {
+      setActivePageView(false)
+    }
+  }
+
+
+
   return (
     <>
       {loading && (<Loading className={'w-20'} />)}
@@ -156,8 +199,13 @@ const MainPage = () => {
         <Search fetchSearchCountries={fetchSearchCountries} changeValue={changeValue} search={search}>
           <SelectMenu selectContinent={selectContinent} continent={continent} changeSelect={changeSelect} />
         </Search>
-        <div className='p-2 mb-6 px-4 border-b border-[#f3f4f6] dark:border-[#2e3031]'>css필터</div>
-        <List countries={countries} newCountries={newCountries} displayedCountries={displayedCountries} errorMsg={errorMsg} filterCountries={filterCountries} />
+        <ActivePageView pageView={pageView} activePageView={activePageView} />
+        <List countries={countries} displayedCountries={displayedCountries} errorMsg={errorMsg} filterCountries={filterCountries} activePageView={activePageView}>
+          {displayedCountries.map((item, index) =>
+            <ListItem key={index} countries={item} activePageView={activePageView} />
+          )}
+        </List>
+        {showButton && <ScrollToTop scrollToTop={scrollToTop} />}
       </div>
     </>
   )

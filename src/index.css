@@ -18,11 +18,11 @@ header {
 }
 
 input {
-  @apply ring-1 ring-[#e5e7eb] focus:outline-none focus:ring-1 focus:ring-blue-950 dark:bg-[#28292c] dark:text-white dark:placeholder:text-white/40 dark:ring-[#2e3031] dark:focus:bg-[#28292c]/30 dark:focus:ring-white  
+  @apply ring-1 ring-[#e5e7eb] focus:outline-none focus:ring-1 focus:ring-blue-950 dark:bg-[#343638] dark:text-white dark:placeholder:text-white/40 dark:ring-[#343638] dark:focus:bg-[#404345] dark:focus:ring-[#404345]
 }
 
 button {
-  @apply ring-1 ring-[#e5e7eb] focus:outline-none focus:ring-1 focus:ring-blue-950 dark:bg-[#28292c] dark:ring-[#2e3031] dark:focus:bg-[#28292c]/30 dark:focus:ring-white
+  @apply bg-white ring-1 ring-[#e5e7eb]  hover:bg-gray-100 transition ease-in   focus:outline-none focus:ring-1 focus:ring-blue-950 dark:bg-[#343638]  dark:ring-[#343638]  dark:focus:ring-white dark:hover:bg-[#404345] dark:hover:ring-[#404345]
 }
 
 /* #f0f8ff */
