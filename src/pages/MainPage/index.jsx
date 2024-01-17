@@ -42,12 +42,12 @@ const MainPage = () => {
   //scroll 버튼 보여주기
   const handleScroll = useMemo(() =>
     throttle(() => {
+      setShowButton(true)
       if (window.scrollY > 1000) {
-        setShowButton(true)
       } else {
         setShowButton(false)
       }
-    }, 300), []
+    }, 300)
   );
 
   //scroll 이벤트

@@ -8,7 +8,7 @@ const List = ({ countries, displayedCountries, errorMsg, filterCountries, childr
             ?
             'divide-y divide-gray-100 max-w-5xl m-auto dark:divide-[#2e3031]'
             :
-            'grid grid-cols-[repeat(auto-fit,_minmax(310px,_1fr))] gap-6 pb-6 '}`}
+            'grid grid-cols-[repeat(auto-fit,_minmax(248px,_1fr))] gap-6 pb-6 min-[300px]:mx-4'}`}
           >
             {children}
           </ul>

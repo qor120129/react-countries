@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Loading from './Loading'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const ListItem = ({ countries, activePageView }) => {
   const [loading, setLoading] = useState(true)
@@ -16,7 +16,7 @@ const ListItem = ({ countries, activePageView }) => {
         ?
         'items-center min-[501px]:space-x-6 max-[500px]:flex-wrap max-[500px]:p-4 max-[500px]:pt-8 max-[500px]:first:pt-4 p-6 hover:bg-[#f3f4f6] dark:hover:bg-[#28292c]'
         :
-        'ring-1 ring-[#e5e7eb] flex-col rounded-lg overflow-hidden relative before:block before:absolute before:-inset-1 z-0 before:z-0 hover:before:bg-[#202124]/10  dark:ring-[#343638] dark:hover:before:bg-gray-100/10'
+        'ring-1 ring-[#e5e7eb] flex-col rounded-lg overflow-hidden relative before:block before:absolute before:-inset-1 z-0 before:z-0 hover:before:bg-[#202124]/10 dark:ring-[#343638] dark:hover:before:bg-gray-100/10 '
         } 
       flex cursor-pointer`
       }
@@ -40,7 +40,7 @@ const ListItem = ({ countries, activePageView }) => {
           alt={countries.flagAlt}
           width="100%"
           height="100%"
-          onLoad={() =>setLoading(false)}
+          onLoad={() => setLoading(false)}
         />
       </div>
       <div
