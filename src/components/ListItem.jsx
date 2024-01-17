@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Loading from './Loading'
 import { Link, useNavigate } from 'react-router-dom'
 
 const ListItem = ({ countries, activePageView }) => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const detailPage = countries?.name.replace(/ /g, "")
   const navigate = useNavigate();
 
@@ -40,7 +40,7 @@ const ListItem = ({ countries, activePageView }) => {
           alt={countries.flagAlt}
           width="100%"
           height="100%"
-          onLoad={() => setLoading(false)}
+          onLoad={() =>setLoading(false)}
         />
       </div>
       <div
