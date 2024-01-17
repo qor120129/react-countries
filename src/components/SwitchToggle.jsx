@@ -10,7 +10,7 @@ const SwitchToggle = ({ toggleTheme }) => {
       checked={enabled}
       onChange={setEnabled}
       className={`
-      relative h-[35px] w-[65px] max-[400px]:w-[25px] max-[400px]:h-[25px] shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out ring-0 text-white bg-[#202124] hover:bg-[#404345] dark:bg-gray-100  dark:hover:bg-gray-200 dark:text-[#2e3031] *:
+      relative h-[35px] w-[65px] max-[400px]:w-[25px] max-[400px]:h-[25px] shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out ring-0 text-white bg-[#2f3033] hover:bg-[#404345] dark:bg-gray-100  dark:hover:bg-gray-200 dark:text-[#2f3033] *:
       max-[400px]:*:hover:bg-[#404345] dark:max-[400px]:*:hover:bg-gray-200
       `}
 
@@ -21,7 +21,8 @@ const SwitchToggle = ({ toggleTheme }) => {
         <>
           <div
             aria-hidden="true"
-            className={'translate-x-1 max-[400px]:translate-x-0 pointer-events-none h-[25px] w-[25px] transform rounded-full bg-white ring-0 transition duration-200 ease-in-out flex items-center justify-center shadow-md  shadow-black text-[#2e3031] max-[400px]:bg-[#2e3031] max-[400px]:text-white'}
+            className={'translate-x-1 max-[400px]:translate-x-0 pointer-events-none h-[25px] w-[25px] transform rounded-full bg-white ring-0 transition duration-200 ease-in-out flex items-center justify-center text-[#2f3033] shadow  min-[400px]:shadow-black max-[400px]:bg-[#2f3033] max-[400px]:text-white '}
+
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
