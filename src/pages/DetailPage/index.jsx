@@ -14,14 +14,14 @@ const DetailPage = () => {
         <div
           className="max-w-5xl m-auto p-6 pt-12 flex  flex-wrap justify-center gap-6 items-center max-[900px]:flex-col max-[400px]:gap-1 max-[500px]:pt-6"
         >
-          <div className="border dark:border-0 flex-1 max-w-[400px]">
+          <div className="border dark:border-0 flex-1  max-w-[400px]">
             <img
               src={state.countries?.flagImg}
               alt={state.countries?.flagAlt}
               className="h-auto w-full object-cover object-center"
             />
           </div>
-          <div className="p-4 max-lg:max-w-[400px]">
+          <div className="p-4 flex-1 max-lg:max-w-[400px]">
             <div className="flex items-center gap-x-2 gap-y-1 flex-wrap mb-6">
               <h1 className="font-bold text-2xl max-[400px]:text-lg">{state.countries?.name}</h1>
               <h2 className="text-lg max-[400px]:text-base">{state.countries?.koName}</h2>
