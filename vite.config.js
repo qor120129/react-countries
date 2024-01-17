@@ -20,6 +20,10 @@ export default defineConfig({
         find: "assets",
         replacement: path.resolve(__dirname, "src/assets"),
       },
+      {
+        find: "layout",
+        replacement: path.resolve(__dirname, "src/layout"),
+      },
     ],
   },
 })

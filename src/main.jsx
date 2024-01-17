@@ -1,15 +1,34 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import { BrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './index.css'
 
-// import './index.css'
+import MainPage from "pages/MainPage";
+import DetailPage from 'pages/DetailPage';
+import MainLayout from 'layout/MainLayout';
+import NotFound from 'components/NotFound';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MainLayout />,
+    children: [
+      {
+        path: '/',
+        element: (
+          <MainPage />
+        ),
+      },
+      {
+        path: `/country/:id`,
+        element: (
+          <DetailPage />
+        ),
+      }
+    ],
+    errorElement: <NotFound />,
+  },
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  // <React.StrictMode>
-  // </React.StrictMode>,
+  <RouterProvider router={router} />
 )

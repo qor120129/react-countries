@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from "react-router-dom";
 import Loading from 'components/Loading';
-import ErrorPage from '../ErrorPage';
+import NotFound from 'components/NotFound';
 
 
 const DetailPage = () => {
@@ -9,8 +9,8 @@ const DetailPage = () => {
   return (
     <>
       {state?.loading && (<Loading className={'w-20'} />)}
-      {!state?.countries && (<ErrorPage />)}
-      {state?.countries && (<div className="min-h-[calc(100vh-118px)] bg-gray-50 dark:bg-[#28292c] relative">
+      {!state?.countries && (<NotFound />)}
+      {state?.countries && (<div className="min-h-[calc(100vh-118px)] bg-gray-50 dark:bg-[#28292c]">
         <div
           className="max-w-5xl m-auto p-6 pt-12 flex  flex-wrap justify-center gap-6 items-center max-[900px]:flex-col max-[400px]:gap-1 max-[500px]:pt-6"
         >

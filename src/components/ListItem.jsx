@@ -7,8 +7,7 @@ const ListItem = ({ countries, activePageView }) => {
   const detailPage = countries?.name.replace(/ /g, "")
   const navigate = useNavigate();
 
-  const handleClick = () => navigate(`/${detailPage}`, { state: { countries, loading } })
-
+  const handleClick = () => navigate(`/country/${detailPage}`, { state: { countries, loading } })
   return (
     <article
       onClick={() => handleClick()}
